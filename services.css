@@ -1,12 +1,115 @@
-img:hover {
-    transform: scale(1.05) translateY(-5px);
-    transition: transform 0.3s ease-in-out;
+/* Global styles */
+body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background: #f0f4f8;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
-body{
-    background-color: azure;
-}
-body .h1{
-    color: yellow;
-    font-size: 2rem;
+
+.title {
     text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 40px;
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    color: #333;
+}
+
+/* Yellow underline for H1 */
+.title::after {
+    content: '';
+    width: 100px;
+    height: 4px;
+    background: yellow;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+/* Paragraph under title */
+p {
+    text-align: center;
+    max-width: 700px;
+    margin: 10px auto 40px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Section (nav) layout with alternating background */
+nav:nth-of-type(1) {
+    background-color: #e1eff6;
+    padding: 40px 20px;
+}
+
+nav:nth-of-type(2) {
+    background-color: #dbe9e9;
+    padding: 40px 20px;
+}
+
+/* Flex container for service blocks */
+nav > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px auto;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background: #ffffffc7;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+nav > div:nth-child(even) {
+    flex-direction: row-reverse;
+    background-color: #f6fafd;
+}
+
+/* Headings */
+h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+/* Image styling */
+img {
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    nav > div {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    img {
+        width: 90%;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
