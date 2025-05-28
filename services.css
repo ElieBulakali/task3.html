@@ -1,0 +1,12 @@
+img:hover {
+    transform: scale(1.05) translateY(-5px);
+    transition: transform 0.3s ease-in-out;
+}
+body{
+    background-color: azure;
+}
+body .h1{
+    color: yellow;
+    font-size: 2rem;
+    text-align: center;
+}
