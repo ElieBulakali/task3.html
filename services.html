@@ -8,6 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
 </head>
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('nav > div').forEach(div => {
+    observer.observe(div);
+  });
+</script>
+
 <body>
     <h1 class="title">OUR SERVICES</h1>
     <p>We serve you good coffee, served with passion and art, in a good environment. It may be online if you want to enjoy our coffee from wherever you are.</p>
@@ -61,7 +76,7 @@
         <div>
             <h2>10. Loyalty Program</h2>
             <h3>Earn points with every purchase and enjoy exclusive rewards and discounts.</h3>
-            <img src="images/бариста готовит кофе #контент #контентфото….jpeg" alt="">
+            <img src="images/ad806bb4-abd0-4833-99ca-b2bfd96b361d.jpeg" alt="Loyalty">
         </div>
     </nav>
     <nav>

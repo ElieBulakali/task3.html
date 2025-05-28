@@ -71,6 +71,19 @@ nav > div:nth-child(even) {
     flex-direction: row-reverse;
     background-color: #f6fafd;
 }
+/* Initial state */
+nav > div {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+/* When in view */
+nav > div.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* Headings */
 h2 {
